@@ -1,0 +1,8 @@
+USE test;
+
+CREATE TABLE item (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  price INT UNSIGNED,
+  PRIMARY KEY (id)
+);
