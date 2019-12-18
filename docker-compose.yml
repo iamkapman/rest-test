@@ -1,0 +1,22 @@
+version: '2'
+services:
+    apache2:
+        image: webdevops/php-apache-dev:7.3
+        volumes:
+            - ./:/app
+        ports:
+            - 80:80
+            - 443:443
+        environment:
+          WEB_DOCUMENT_ROOT: /app/web
+    mysql:
+        image: 'mysql:latest'
+        volumes:
+          - ./database/mysql:/var/lib/mysql
+          - ./database/dump:/docker-entrypoint-initdb.d
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+          MYSQL_ROOT_PASSWORD: test
+          MYSQL_USER: test
+          MYSQL_PASSWORD: test
+          MYSQL_DATABASE: test

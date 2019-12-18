@@ -9,7 +9,9 @@
 namespace app\Domain\User\Repository;
 
 
+use app\Domain\User\Entities\User;
+
 interface UserRepositoryInterface
 {
-
+    public function findById(int $id): ?User;
 }

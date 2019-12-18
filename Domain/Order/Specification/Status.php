@@ -9,7 +9,15 @@
 namespace app\Domain\Order\Specification;
 
 
-class Status
+abstract class Status
 {
+    protected $name;
 
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }

@@ -11,5 +11,5 @@ namespace app\Specification;
 
 interface SqlRepositoryInterface
 {
-
+    public function __construct(\PDO $db);
 }

@@ -11,7 +11,7 @@ namespace app\Domain\User\Repository;
 
 use app\Domain\User\Entities\User;
 
-class TestUserRepository implements UserRepositoryInterface
+class DefaultUserRepository implements UserRepositoryInterface
 {
     /**
      * @param int $id

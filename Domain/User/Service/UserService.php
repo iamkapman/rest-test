@@ -9,7 +9,32 @@
 namespace app\Domain\User\Service;
 
 
-class UserService
-{
+use app\Domain\User\Entities\User;
+use app\Domain\User\Repository\UserRepositoryInterface;
+use app\Specification\ServiceInterface;
 
+class UserService implements ServiceInterface
+{
+    /** @var UserRepositoryInterface */
+    protected $userRepository;
+
+    /**
+     * UserService constructor.
+     * @param UserRepositoryInterface $userRepository
+     */
+    public function __construct(UserRepositoryInterface $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
+    /**
+     * @param $userId
+     * @return User|null
+     */
+    public function get($userId)
+    {
+        $user = $this->userRepository->findById($userId);
+
+        return $user;
+    }
 }

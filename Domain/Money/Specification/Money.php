@@ -9,7 +9,12 @@
 namespace app\Domain\Money\Specification;
 
 
-class Money
+abstract class Money
 {
+    protected $amount;
 
+    public function getAmount()
+    {
+        return $this->amount;
+    }
 }

@@ -10,16 +10,21 @@ namespace app\Controller;
 
 
 use app\Application;
-use app\Domain\Item\Repository\SqlItemRepository;
-use app\Domain\Item\Service\ItemService;
 
-class MainController extends Controller
+class ItemController extends Controller
 {
-    public function actionStart()
+    public function actionGenerateItems()
     {
-        $itemService = new ItemService(new SqlItemRepository(Application::getInstance()->getConnection()));
+        $itemService = Application::getInstance()->getService('Item', 'Item');
         for ($i = 0; $i < 10; $i++) {
             $itemService->create("Item #{$i}", mt_rand(1000, 10000));
         }
+        return [];
+    }
+
+    public function actionGet()
+    {
+        $itemService = Application::getInstance()->getService('Item', 'Item');
+        return $itemService->findAll();
     }
 }

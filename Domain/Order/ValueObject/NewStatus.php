@@ -9,7 +9,9 @@
 namespace app\Domain\Order\ValueObject;
 
 
-class NewStatus
-{
+use app\Domain\Order\Specification\Status;
 
+class NewStatus extends Status
+{
+    protected $name = 'new';
 }

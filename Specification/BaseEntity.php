@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Kapman
- * Date: 16.12.2019
- * Time: 10:55
+ * Date: 15.12.2019
+ * Time: 18:55
  */
 
 namespace app\Specification;
@@ -11,5 +11,8 @@ namespace app\Specification;
 
 class BaseEntity
 {
-
+    public function toArray()
+    {
+        return get_object_vars($this);
+    }
 }

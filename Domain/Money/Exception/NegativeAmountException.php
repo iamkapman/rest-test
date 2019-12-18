@@ -9,7 +9,7 @@
 namespace app\Domain\Money\Exception;
 
 
-class NegativeAmountException
+class NegativeAmountException extends \Exception
 {
 
 }

@@ -9,7 +9,9 @@
 namespace app\Domain\Order\ValueObject;
 
 
-class PaidStatus
-{
+use app\Domain\Order\Specification\Status;
 
+class PaidStatus extends Status
+{
+    protected $name = 'paid';
 }

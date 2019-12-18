@@ -9,7 +9,11 @@
 namespace app\Domain\Item\Repository;
 
 
+use app\Domain\Item\Entities\Item;
+
 interface ItemRepositoryInterface
 {
-
+    public function findById(int $id): ?Item;
+    public function findAll(): array;
+    public function insert(Item $item);
 }

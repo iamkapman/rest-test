@@ -9,7 +9,11 @@
 namespace app\Domain\Order\Repository;
 
 
+use app\Domain\Order\Entities\Order;
+
 interface OrderRepositoryInterface
 {
-
+    public function findById(int $id): ?Order;
+    public function insert(Order $order);
+    public function updateStatus(Order $order);
 }
